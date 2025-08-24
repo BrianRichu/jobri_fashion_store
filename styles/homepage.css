@@ -1,0 +1,42 @@
+.homepage-header{
+    background-color: rgb(19, 25, 33);
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+}
+
+.homepage-left-section{
+    width: 300px;
+}
+
+@media(max-width: 800px){
+    .homepage-left-section{
+        width: unset;
+    }
+}
+
+.header-link{
+    display: inline-block;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header-link:hover{
+    border: 1px solid white;
+}
+
+.homepage-logo{
+    width: 100px;
+    border-radius:3px ;
+}
