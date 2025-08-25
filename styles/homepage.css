@@ -1,42 +1,201 @@
-.homepage-header{
-    background-color: rgb(19, 25, 33);
-    color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: flex;
-    align-items: center;
+/* ===============================
+   Root Variables
+================================= */
+:root {
+  --primary-color: #111;       /* main text / header background */
+  --secondary-color: #f5f5f5;  /* background / light areas */
+  --accent-color: #d4af37;     /* highlight (gold for watches vibe) */
+  --text-color: #fff;          /* text on dark bg */
+  --font-family: 'Roboto', sans-serif;
+  --padding: 1rem;
+  --transition: all 0.3s ease;
+  --border-radius: 6px;
+}
+
+/* ===============================
+   Global Styles
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--secondary-color);
+  padding-top: 70px; /* leave space for fixed header */
+}
+
+/* ===============================
+   Header Styles
+================================= */
+.homepage-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Left Section (Logo) */
+.homepage-logo {
+  height: 40px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.homepage-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Middle Section (Search Bar) */
+.homepage-middle-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar {
+  width: 500px;
+  max-width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.search-button {
+  background: var(--accent-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-button:hover {
+  background: #b9932c;
+}
+
+.search-icon {
+  height: 20px;
+  filter: invert(1); /* makes white */
+}
+
+/* Right Section (Orders & Cart) */
+.homepage-right-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.orders-link, .cart-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.orders-link:hover, .cart-link:hover {
+  color: var(--accent-color);
+}
+
+.cart-section{
+    position: relative;
+}
+
+.cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cart-icon {
+  height: 28px;
+  position: relative;
+}
+
+/* Move quantity inside the cart icon */
+.cart-quantity {
+  color: rgb(240, 136, 4);
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+  bottom:16px;
+  left: 10px;
+  width: 26px;
+  text-align: center;
+}
+
+.cart-text {
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   Responsive Design (One Line)
+================================= */
+
+/* Tablets and below (max 768px) */
+@media (max-width: 768px) {
+  .homepage-header {
+    padding: 0.5rem;
+  }
+
+  /* Search bar shrinks */
+  .search-bar {
+    width: 200px;
+  }
+
+  .orders-link span {
+    font-size: 0.75rem;
+  }
+
+  .cart-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile (max 700px) */
+@media (max-width: 550px) {
+  .homepage-header {
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-}
+    gap: 0.5rem;
+  }
 
-.homepage-left-section{
-    width: 300px;
-}
+  /* Logo smaller */
+  .homepage-logo {
+    height: 28px;
+  }
 
-@media(max-width: 800px){
-    .homepage-left-section{
-        width: unset;
-    }
-}
+  /* Search bar very small */
+  .search-bar {
+    width: 120px;
+    font-size: 0.8rem;
+  }
 
-.header-link{
-    display: inline-block;
-    padding: 6px;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    border: 1px solid rgba(0, 0, 0, 0);
-}
+  .search-button {
+    padding: 0.3rem 0.6rem;
+  }
 
-.header-link:hover{
-    border: 1px solid white;
-}
+  .cart-icon {
+    height: 26px;
+  }
 
-.homepage-logo{
-    width: 100px;
-    border-radius:3px ;
+  .cart-quantity {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+    top: 2px;
+    right: 2px;
+  }
 }

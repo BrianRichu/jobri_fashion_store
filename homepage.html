@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobri Watches</title>
 
-    <!--Load a font called Roboto fromm google fonts-->
+    <!-- Load Roboto font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/homepage.css">
 </head>
 <body>
-    <div class="homepage-header">
+    <header class="homepage-header">
         <div class="homepage-left-section">
             <a href="homepage.html" class="header-link">
-                <img src="/images/icons/jobri-logo.png" alt="" class="homepage-logo">
+                <img src="/images/icons/jobri-logo.png" alt="Jobri Watches Logo" class="homepage-logo">
             </a>
         </div>
 
         <div class="homepage-middle-section">
-            <input type="text" placeholder="search" class="search-bar">
-            <button class="search-button">
-                <img src="/images/icons/search-icon.png" class="search-icon">
+            <input type="text" placeholder="Search" class="search-bar" aria-label="Search">
+            <button class="search-button" aria-label="Search">
+                <img src="/images/icons/search-icon.png" alt="Search Icon" class="search-icon">
             </button>
         </div>
 
         <div class="homepage-right-section">
             <a href="orders.html" class="orders-link">
                 <span class="returns-text">Returns</span>
-                <span class="oders-text">& orders</span>
+                <span class="orders-text">& Orders</span>
             </a>
 
             <a href="checkout.html" class="cart-link">
-                <img src="/images/icons/cart-icon.png" class="cart-icon">
-                <div class="cart-quantity">3</div>
-                <div class="cart-text">cart</div>
+                <div class="cart-section">
+                    <img src="/images/icons/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+                    <div class="cart-quantity">0</div>
+                </div>
+                <div class="cart-text">Cart</div>
             </a>
-        </div>
-    </div>
+         </div>
+    </header>
 </body>
 </html>
