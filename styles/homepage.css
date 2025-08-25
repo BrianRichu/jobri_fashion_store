@@ -3,13 +3,15 @@
 ================================= */
 :root {
   --primary-color: #111;       /* main text / header background */
-  --secondary-color: #f5f5f5;  /* background / light areas */
+  --secondary-color: #d3d1d1;  /* background / light areas */
   --accent-color: #d4af37;     /* highlight (gold for watches vibe) */
   --text-color: #fff;          /* text on dark bg */
   --font-family: 'Roboto', sans-serif;
   --padding: 1rem;
   --transition: all 0.3s ease;
   --border-radius: 6px;
+  --background-color: linear-gradient(135deg, #111, #222);
+
 }
 
 /* ===============================
@@ -204,3 +206,161 @@ body {
     display: none;
   }
 }
+
+/* ===============================
+   Intro Section
+================================= */
+.intro-section {
+  text-align: center;
+  padding: 2rem 2rem;
+  background: linear-gradient(135deg, #252525, #212121); /* elegant dark bg */
+  color: var(--text-color);
+  font-family: var(--font-family);
+  height: 240px;
+}
+
+.intro-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color); /* gold */
+}
+
+.intro-section h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.intro-section p {
+  max-width: 700px;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+}
+
+/* Make phone number stand out */
+.intro-section p:last-of-type {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+}
+
+/* ===============================
+   Responsive Intro Section
+================================= */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: rem 1.5rem;
+  }
+
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .intro-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .intro-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .intro-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .intro-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .intro-section p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .intro-section p:last-of-type {
+    font-size: 1rem;
+  }
+}
+
+
+/* ===============================
+   Links Section (Category Nav)
+================================= */
+/* Links Section */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+  position: relative;
+}
+
+/* Main Link */
+.dropdown > a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.dropdown > a:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* below the main link */
+  left: 0;
+  background: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  min-width: 180px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Dropdown Items */
+.dropdown-content a {
+  display: block;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Show on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
